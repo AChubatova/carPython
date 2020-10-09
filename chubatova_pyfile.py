@@ -1,4 +1,4 @@
-import requests_auth
+import par
 
 class Car:
 
@@ -12,6 +12,7 @@ class Car:
 
     def accelerate(self):
         self.speed += 5
+
 
     def brake(self):
         self.speed -= 5
