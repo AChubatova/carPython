@@ -1,5 +1,5 @@
-import par
-import pmath
+#import par
+#import pmath
 import sys
 
 class Car:
