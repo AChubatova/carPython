@@ -1,5 +1,6 @@
 #import par
 #import pmath
+
 import sys
 import time
 
@@ -37,5 +38,10 @@ if __name__ == '__main__':
     print("I'm a car!")
     print("Python version")
     print(sys.version)
-    time.sleep(12)
+    time.sleep(1)
     #sleep(120)
+    f = open("myfile.txt", "w")
+    f.write("Woops!!")
+    f.close()
+    msg = "##teamcity[publishArtifacts 'myfile.txt']"
+    print(msg)
