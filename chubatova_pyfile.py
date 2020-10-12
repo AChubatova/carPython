@@ -1,5 +1,6 @@
 import par
 import pmath
+import sys
 
 class Car:
 
@@ -33,3 +34,5 @@ if __name__ == '__main__':
 
     my_car = Car()
     print("I'm a car!")
+    print("Python version")
+    print(sys.version)
