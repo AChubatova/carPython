@@ -1,6 +1,7 @@
 #import par
 #import pmath
 import sys
+import time
 
 class Car:
 
@@ -36,3 +37,4 @@ if __name__ == '__main__':
     print("I'm a car!")
     print("Python version")
     print(sys.version)
+    sleep(120s)
