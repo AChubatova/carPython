@@ -37,4 +37,5 @@ if __name__ == '__main__':
     print("I'm a car!")
     print("Python version")
     print(sys.version)
-    time.sleep(120)
+    #time.sleep(120)
+    sleep(120)
