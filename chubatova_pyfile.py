@@ -46,5 +46,5 @@ if __name__ == '__main__':
     msg = "##teamcity[publishArtifacts 'myfile.txt']"
     print(msg)
     print("I am a loooooooooooooooooooooooooong loooooooooooooooooooooooooong loooooooooooooooooooooooooong loooooooooooooooooooooooooong python line")
-    if (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or:
+    if (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1) or (1 > 1):
         print("a")
