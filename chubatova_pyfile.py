@@ -45,3 +45,4 @@ if __name__ == '__main__':
     f.close()
     msg = "##teamcity[publishArtifacts 'myfile.txt']"
     print(msg)
+    print("I am a loooooooooooooooooooooooooong loooooooooooooooooooooooooong loooooooooooooooooooooooooong loooooooooooooooooooooooooong python line")
