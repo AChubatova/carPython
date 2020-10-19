@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>intellij inspection</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="" type="Inspection">
+        <parameters>
+          <param name="idea.app.home" value="%teamcity.tool.intellij.DEFAULT%" />
+          <param name="iprInfoRunParam"><![CDATA[<iprInfo path-to-ipr="">
+  <Jdk name="1.8" is-used="true" type="JavaSDK" path-to-jdk="%env.JDK_1_8%">
+    <Pattern value="jre/lib/*.jar" />
+    <ExternalAnnotationPattern value="%teamcity.tool.idea%/lib/jdkAnnotations.jar" />
+  </Jdk>
+  <PathVariable name="MAVEN_REPOSITORY" value="" />
+</iprInfo>]]></param>
+          <param name="jvmArgs" value="-Xmx512m -XX:ReservedCodeCacheSize=240m" />
+          <param name="target.jdk.home" value="%env.JDK_18%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Python_InspectionVcs" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

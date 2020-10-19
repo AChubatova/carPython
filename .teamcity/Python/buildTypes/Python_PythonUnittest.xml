@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>python_unittest</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="unittest" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="virtualenv" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requireMents.txt" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Python_Unitttest" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

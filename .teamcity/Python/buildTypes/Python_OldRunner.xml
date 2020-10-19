@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>oldRunner</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="oldRunner" type="python">
+        <parameters>
+          <param name="bitness" value="*" />
+          <param name="python-exe" value="%Python.3%" />
+          <param name="python-kind" value="C" />
+          <param name="python-path" value="" />
+          <param name="python-script-code" value="print(&quot;%pythonFile%&quot;)" />
+          <param name="python-script-file-name" value="питон.py" />
+          <param name="python-script-mode" value="code" />
+          <param name="python-ver" value="3" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Python_ChubatovaSimplePython" />
+      <vcs-entry-ref root-id="Python_PyCharmCar">
+        <checkout-rule rule="+:. =&gt; pycharmCar" />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

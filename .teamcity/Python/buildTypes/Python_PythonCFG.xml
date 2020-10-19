@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>pythonCFG</name>
+  <description />
+  <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_2" />
+      <setting-ref ref="RUNNER_3" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="py2" type="python-runner">
+        <parameters>
+          <param name="arguments" value="-V" />
+          <param name="command" value="file" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="New build step" type="python-runner">
+        <parameters>
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="virtualenv" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonExecutable" value="/usr/local/bin/python3" />
+          <param name="pythonVersion" value="other" />
+          <param name="scriptContent"><![CDATA[#import par
+#import pmath
+
+import sys
+import time
+
+class Car:
+
+    def __init__(self, speed=0):
+        self.speed = speed
+        self.odometer = 0
+        self.time = 0
+
+    def say_state(self):
+        print("I'm going {} kph!".format(self.speed))
+
+    def accelerate(self):
+        self.speed += 5
+
+
+    def brake(self):
+        self.speed -= 5
+
+    def step(self):
+        self.odometer += self.speed
+        self.time += 1
+
+    def average_speed(self):
+        if self.time != 0:
+            return self.odometer / self.time
+        else:
+            pass
+
+
+if __name__ == '__main__':
+
+    my_car = Car()
+    print("I'm a car!")
+    print("Python version")
+    print(sys.version)
+    time.sleep(1)
+    #sleep(120)
+    f = open("myfile.txt", "w")
+    f.write("Woops!!")
+    f.close()
+    msg = "##teamcity[publishArtifacts 'myfile.txt']"
+    print(msg)]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvArgs" value="--clear" />
+          <param name="virtualenvEnvName" value="venv venv2 venv3" />
+          <param name="virtualenvFile" value="/Users/nastasia.chubatova/requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_3" name="pytest" type="python-runner">
+        <parameters>
+          <param name="command" value="pytest" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonExecutable" value="/usr/local/bin/python3" />
+          <param name="pythonVersion" value="other" />
+          <param name="scriptArguments"><![CDATA[# content of test_sample.py
+def inc(x):
+    return x + 1
+
+
+def test_answer():
+    assert inc(3) == 5]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="file" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Python_Comp" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

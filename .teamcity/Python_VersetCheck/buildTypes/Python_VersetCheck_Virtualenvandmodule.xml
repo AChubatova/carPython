@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>virtualenvandmodule</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="lion" type="python-runner">
+        <parameters>
+          <param name="command" value="file" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="pipenv" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="plugin.docker.imageId" value="python" />
+          <param name="plugin.docker.pull.enabled" value="true" />
+          <param name="plugin.docker.run.parameters" value="--rm" />
+          <param name="pythonVersion" value="python2" />
+          <param name="scriptFile" value="filename" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="tiger" type="python-runner">
+        <parameters>
+          <param name="arguments" value="interparg" />
+          <param name="command" value="module" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="virtualenv" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="module" value="modulename" />
+          <param name="pythonExecutable" value="/usr/bin/python3" />
+          <param name="pythonVersion" value="other" />
+          <param name="scriptArguments" value="scriptarg" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvArgs" value="vendarg" />
+          <param name="virtualenvEnvName" value="venvw" />
+          <param name="virtualenvFile" value="requirements.txt" />
+          <param name="virtualenvPipArgs" value="pipinstallarg" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_3" name="papagei" type="python-runner">
+        <parameters>
+          <param name="arguments" value="addpythonargs" />
+          <param name="command" value="unittest" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="true" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="man" type="python-runner">
+        <parameters>
+          <param name="command" value="arguments" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="innerArguments" value="pyArg" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_5" name="pytest" type="python-runner">
+        <parameters>
+          <param name="arguments" value="argsForSCript" />
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptArguments" value="" />
+          <param name="scriptContent" value="print(1)" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_6" name="monkey" type="python-runner">
+        <parameters>
+          <param name="arguments" value="argsAdditional" />
+          <param name="command" value="arguments" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="innerArguments" value="argsFromArguments" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptArguments" value="" />
+          <param name="scriptContent" value="" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_7" name="" type="jb.nuget.installer">
+        <parameters>
+          <param name="nuget.path" value="custompath/" />
+          <param name="nuget.updatePackages.mode" value="sln" />
+          <param name="nuget.use.restore" value="restore" />
+          <param name="sln.path" value=".sln" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_8" name="bazel" type="bazel">
+        <parameters>
+          <param name="command" value="kjkj" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolPath" value="bazelpath" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_9" name="deprecated python" type="python">
+        <parameters>
+          <param name="bitness" value="*" />
+          <param name="python-exe" value="/usr/bin/python" />
+          <param name="python-kind" value="X" />
+          <param name="python-path" value="" />
+          <param name="python-script-mode" value="code" />
+          <param name="python-ver" value="*" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

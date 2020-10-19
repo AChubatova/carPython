@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>testFields</name>
+  <description />
+  <settings>
+    <options>
+      <option name="checkoutMode" value="ON_SERVER" />
+      <option name="cleanBuild" value="true" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="module" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="module" value="pytest" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptContent" value="print (&quot;a&quot;)" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_3" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="file" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="virtualenv" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="execute_if_failed" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="file" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Python_PyCharmCar" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

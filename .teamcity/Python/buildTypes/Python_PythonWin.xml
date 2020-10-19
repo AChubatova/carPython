@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>pythonWin</name>
+  <description />
+  <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_1" />
+      <setting-ref ref="RUNNER_2" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_1" name="py2" type="python-runner">
+        <parameters>
+          <param name="arguments" value="-V" />
+          <param name="command" value="FILE" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="coverage_args" value="--omit=*lib*" />
+          <param name="coverage_enabled" value="false" />
+          <param name="envTool" value="none" />
+          <param name="env_tool" value="NONE" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="python_type" value="PYTHON3" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="test_reporting" value="true" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+          <param name="virtualenv_env_name" value="venv" />
+          <param name="virtualenv_file" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="FILE" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="coverage_args" value="--omit=*lib*" />
+          <param name="coverage_enabled" value="false" />
+          <param name="envTool" value="none" />
+          <param name="env_tool" value="NONE" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="python_executable" value="python3" />
+          <param name="python_type" value="PYTHON_OTHER" />
+          <param name="script_file" value="py4.py" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="test_reporting" value="true" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+          <param name="virtualenv_env_name" value="venv" />
+          <param name="virtualenv_file" value="requirements.txt" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_3" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "USERPROFILE:"
+echo %%USERPROFILE%%]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="" type="python-runner">
+        <parameters>
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptContent" value="print(&quot;1&quot;)" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value="venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Python_ChubatovaSimplePython" />
+      <vcs-entry-ref root-id="Python_PyCharmCar">
+        <checkout-rule rule="+:. =&gt; carProject" />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
