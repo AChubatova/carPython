@@ -4,6 +4,7 @@ import sys
 import time
 import sys
 import time
+import clone
 
 class Car:
 
